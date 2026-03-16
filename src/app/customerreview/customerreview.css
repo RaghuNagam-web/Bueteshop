@@ -1,0 +1,14 @@
+.r{
+  box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.2);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+.flow{
+  height: 7rem;
+  overflow-y: auto;
+}
+.flow::-webkit-scrollbar{
+  display: none;
+}

@@ -1,0 +1,164 @@
+
+.flower{
+  position: absolute;
+  top: -3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+
+@media (min-width: 1400px) {
+    .container1{
+        max-width: 2000px !important;
+    }
+}
+ @media (min-width: 576px) and (max-width: 1399px) {
+  .container1 {
+    max-width: 2000px;
+  }
+}
+@media (min-width: 1921px) {
+    .flower{
+      top: -2.5%;
+    }
+}
+@media (max-width:1820px){
+  .flower{
+    top: -3.5%;
+  }
+}
+@media only screen and (max-width:1750px){
+  .flower{
+    top: -4.2%;
+  }
+}
+@media only screen and (max-width:1650px){
+  .flower{
+    top: -4.8%;
+  }
+}
+@media only screen and (max-width:1550px){
+  .flower{
+    top: -5.3%;
+    width: 170px;
+  }
+}
+@media only screen and (max-width:1450px){
+  .flower{
+    top: -5.2%;
+    width: 160px;
+  }
+}
+@media only screen and (max-width:1350px){
+  .flower{
+    top: -5.3%;
+    width: 150px;
+  }
+}
+@media only screen and (max-width:1250px){
+  .flower{
+    top: -6%;
+    width: 145px;
+  }
+}
+@media only screen and (max-width:1200px){
+  .flower{
+    width: 140px;
+  }
+}
+
+@media only screen and (max-width:1100px){
+  .flower{
+    top: -6.1%;
+    width: 130px;
+  }
+
+}
+@media only screen and (max-width:1000px){
+  .flower{
+    top: -5.9%;
+    width: 115px;
+  }
+
+}
+/* @media (min-width:992px) and (max-width: 1199px) {
+  .container{
+    max-width: 1140px !important;
+  }
+} */
+@media only screen and (max-width:900px){
+  .flower{
+    top: -7.3%;
+    width: 115px;
+  }
+
+}
+@media only screen and (max-width:800px){
+  .flower{
+    top: -8.3%;
+    width: 110px;
+  }
+}
+@media (max-width:991px){
+  .container1{
+    margin-top: 1rem !important;
+  }
+}
+@media only screen and (max-width:700px){
+  .flower{
+    top: -8.5%;
+    width: 100px;
+  }
+}
+@media only screen and (max-width:600px){
+  .flower{
+    top: -7.8%;
+    width: 80px;
+  }
+}
+
+@media (max-width:576px){
+  .flower{
+    top: -7%;
+    width: 75px;
+  }
+}
+@media only screen and (max-width:500px){
+  .flower{
+    top: -8%;
+    width: 70px;
+  }
+}
+@media (max-width:462px){
+  .flower{
+    z-index:1;
+  }
+}
+@media only screen and (max-width:457px){
+  .container1{
+    margin-top: 1rem !important;
+  }
+}
+@media only screen and (max-width:425px){
+  .flower{
+    width: 60px;
+    top: -8.5%;
+  }
+}
+@media only screen and (max-width:390px){
+  .flower{
+    width: 50px;
+    top: -7.3%;
+  }
+  /* .m{
+  margin-top: 1.7rem;
+  } */
+}
+@media only screen and (max-width:360px){
+  .flower{
+    width: 50px;
+    top: -8.7%;
+
+  }
+}

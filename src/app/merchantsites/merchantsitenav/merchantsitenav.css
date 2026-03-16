@@ -1,0 +1,20 @@
+p{
+  font-size: 16px;
+  cursor: pointer;
+}
+.custom-offcanvas{
+  width: 300px;
+}
+
+@media (min-width:768px){
+  ul{
+    height: 0px;
+  }
+}
+@media (max-width:576px){
+  .custom-offcanvas{
+    width: 250px;
+  }
+}
+
+

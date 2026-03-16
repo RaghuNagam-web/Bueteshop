@@ -1,0 +1,171 @@
+<div class="d-flex align-items-center justify-content-center" >
+  <form class="form-container"  [formGroup]="couponform" (ngSubmit)="upload()">
+    <h2 class="text-center">Merchant Upload Coupons</h2>
+    <div class="row">
+      <!-- <div class=" col-12 col-xl-6">
+        <div class="mb-3 mt-3">
+          <label class="form-label">Merchant Id</label>
+          <input type="number" placeholder="Enter Merchant Id" class="form-control py-2" required formControlName="MerchantId">
+          @if (couponform.get('MerchantId')?.touched && couponform.get('MerchantId')?.errors?.['required']) {
+            <small class="text-danger">Merchant ID is required.</small>
+          }
+        </div>
+      </div> -->
+      <div class=" col-12 col-xl-6">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Coupon Name</label>
+          <input type="text" placeholder="Enter Coupon Name " class="form-control py-2" required formControlName="CouponName">
+          @if (couponform.get('CouponName')?.touched && couponform.get('CouponName')?.errors?.['required']) {
+            <small class="text-danger">Coupon Name is required.</small>
+          }
+          @if (couponform.get('CouponName')?.touched && couponform.get('CouponName')?.errors?.['minlength']) {
+            <small class="text-danger">Coupon Name must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Coupon Code</label>
+          <input type="text" placeholder="Enter Coupon Code" class="form-control py-2" required formControlName="CouponCode">
+          @if (couponform.get('CouponCode')?.touched && couponform.get('CouponCode')?.errors?.['required']) {
+            <small class="text-danger">Coupon Code is required.</small>
+          }
+          @if (couponform.get('CouponCode')?.touched && couponform.get('CouponCode')?.errors?.['pattern']) {
+            <small class="text-danger">Enter a valid Coupon Code.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Category</label>
+          <input type="text" placeholder="Enter Category Name" class="form-control py-2" required formControlName="Category">
+          @if (couponform.get('Category')?.touched && couponform.get('Category')?.errors?.['required']) {
+            <small class="text-danger">Category Name is required.</small>
+          }
+          @if (couponform.get('Category')?.touched && couponform.get('Category')?.errors?.['minlength']) {
+            <small class="text-danger">Category must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Expiry Date</label>
+          <input type="date" placeholder="Enter Expiry Date" class="form-control py-2" required formControlName="ExpiryDate">
+          @if (couponform.get('ExpiryDate')?.touched && couponform.get('ExpiryDate')?.errors?.['required']) {
+            <small class="text-danger">Expiry Date is required.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Terms And Conditions</label>
+          <input type="text" placeholder="Enter Terms And Conditions" class="form-control py-2" required formControlName="TermsAndConditions">
+          @if (couponform.get('TermsAndConditions')?.touched && couponform.get('TermsAndConditions')?.errors?.['required']) {
+            <small class="text-danger">Terms And Conditions is required.</small>
+          }
+          @if (couponform.get('TermsAndConditions')?.touched && couponform.get('TermsAndConditions')?.errors?.['minlength']) {
+            <small class="text-danger">Terms And Conditions must be at least 5 characters.</small>
+          }
+        </div>
+      </div>
+
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input type="text" placeholder="Enter Title" class="form-control py-2" required formControlName="Title">
+          @if (couponform.get('Title')?.touched && couponform.get('Title')?.errors?.['required']) {
+            <small class="text-danger">Title is required.</small>
+          }
+          @if (couponform.get('Title')?.touched && couponform.get('Title')?.errors?.['minlength']) {
+            <small class="text-danger">Title must be at least 3 characters.</small>
+          }
+          @if (couponform.get('Title')?.touched && couponform.get('Title')?.errors?.['maxlength']) {
+            <small class="text-danger">Title must be at most 50 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <input type="text" placeholder="Enter Description" class="form-control py-2" required formControlName="Description">
+          @if (couponform.get('Description')?.touched && couponform.get('Description')?.errors?.['required']) {
+            <small class="text-danger">Description is required.</small>
+          }
+          @if (couponform.get('Description')?.touched && couponform.get('Description')?.errors?.['minlength']) {
+            <small class="text-danger">Description must be at least 5 characters.</small>
+          }
+          @if (couponform.get('Description')?.touched && couponform.get('Description')?.errors?.['maxlength']) {
+            <small class="text-danger">Description must be at most 100 characters.</small>
+          }
+        </div>
+      </div>
+      <!-- <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Merchant Url</label>
+          <input type="text" placeholder="Enter Merchant Url" class="form-control py-2" required formControlName="MerchantURL">
+          @if (couponform.get('MerchantURL')?.touched && couponform.get('MerchantURL')?.errors?.['required']) {
+            <small class="text-danger">Merchant Url is required.</small>
+          }
+          @if (couponform.get('MerchantURL')?.touched && couponform.get('MerchantURL')?.errors?.['pattern']) {
+            <small class="text-danger">Enter a valid URL starting with http:// or https://</small>
+          }
+        </div>
+      </div> -->
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Percentage</label>
+          <input type="number" placeholder="Enter Percentage" class="form-control py-2" required formControlName="Percentage">
+          @if (couponform.get('Percentage')?.touched && couponform.get('Percentage')?.errors?.['required']) {
+            <small class="text-danger">Percentage is required.</small>
+          }
+          @if (couponform.get('Percentage')?.touched && couponform.get('Percentage')?.errors?.['pattern']) {
+            <small class="text-danger">Enter a valid Percentage.</small>
+          }
+          @if (couponform.get('Percentage')?.touched && couponform.get('Percentage')?.errors?.['min']) {
+            <small class="text-danger">Percentage must be greater than 0.</small>
+          }
+          @if (couponform.get('Percentage')?.touched && couponform.get('Percentage')?.errors?.['max']) {
+            <small class="text-danger">Percentage must be less than 100.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Discount</label>
+          <input type="number" placeholder="Enter Discount" class="form-control py-2" required formControlName="DiscountValue">
+          @if (couponform.get('DiscountValue')?.touched && couponform.get('DiscountValue')?.errors?.['required']) {
+            <small class="text-danger">DiscountValue is required.</small>
+          }
+          @if (couponform.get('DiscountValue')?.touched && couponform.get('DiscountValue')?.errors?.['pattern']) {
+            <small class="text-danger">Enter a valid DiscountValue.</small>
+          }
+          @if (couponform.get('DiscountValue')?.touched && couponform.get('DiscountValue')?.errors?.['min']) {
+            <small class="text-danger">DiscountValue must be greater than 0.</small>
+          }
+          @if (couponform.get('DiscountValue')?.touched && couponform.get('DiscountValue')?.errors?.['max']) {
+            <small class="text-danger">Discount must be less than 100.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Request Slot Id</label>
+          <input type="text" placeholder="Enter Request Slot Id" class="form-control py-2" required formControlName="RequestedSlotId">
+          @if (couponform.get('RequestedSlotId')?.touched && couponform.get('RequestedSlotId')?.errors?.['required']) {
+            <small class="text-danger">Request Slot Id is required.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">Ad Post</label>
+          <input type="file" placeholder="Enter Ad Post" class="form-control py-2" required (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+          @if (couponform.get('AdPost')?.touched && couponform.get('AdPost')?.errors?.['required']) {
+            <small class="text-danger">Ad Post is required.</small>
+          }
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn custom-btn" style="width: 100%;">Submit</button>
+  </form>
+</div>

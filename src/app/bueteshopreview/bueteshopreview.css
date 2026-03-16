@@ -1,0 +1,25 @@
+.r{
+  box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.2);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.flow{
+  height: 12vh;
+  overflow-y: auto;
+}
+.flow::-webkit-scrollbar{
+  display: none;
+}
+@media (max-width:1399px){
+  .flow{
+  height: 13vh;
+  overflow-y: auto;
+  }
+}
+@media (max-width:575px){
+  .flow{
+  height: 15vh;
+  overflow-y: auto;
+  }
+}

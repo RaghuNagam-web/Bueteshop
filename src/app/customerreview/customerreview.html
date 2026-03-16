@@ -1,0 +1,38 @@
+
+<form>
+  <h5 class="text-center mb-3">Customer Reviews</h5>
+  <input type="search" class="form-control w-75 mx-auto" placeholder="Search for reviews...." (input)="search($event)">
+</form>
+
+<div *ngIf="message()">
+  <p class="mt-3 d-flex justify-content-center">No reviews found</p>
+</div>
+
+<div *ngIf="!message()">
+  <div class="flow">
+    <div *ngFor="let r of review()" class="mt-3">
+      <div class="r">
+
+        <!-- Coupon Name + Star Rating -->
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="fw-medium">{{ r.couponName }}</div>
+
+          <div>
+            <i *ngFor="let s of stars"
+               class="bi"
+               [ngClass]="s <= r.rating ? 'bi-star-fill text-warning' : 'bi-star text-warning'">
+            </i>
+          </div>
+        </div>
+
+        <!-- User Review -->
+        <div class="mt-1">
+          <span class="fw-bold">{{ r.userName }}</span> :
+          {{ r.reviewText }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

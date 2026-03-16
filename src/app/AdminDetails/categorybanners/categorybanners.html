@@ -1,0 +1,80 @@
+
+ <div class="d-flex justify-content-center align-items-center con">
+  <form class="form-container" [formGroup]="categorybannerform" (ngSubmit)="upload()">
+    <h2 class="text-center">Category Banners Upload</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3 mt-3">
+          <label class="form-label">File Name</label>
+          <input type="text" placeholder="File Name" class="form-control py-2" required formControlName="FileName">
+          @if (categorybannerform.get('FileName')?.touched && categorybannerform.get('FileName')?.errors?.['required']) {
+            <small class="text-danger">File Name is required.</small>
+          }
+          @if (categorybannerform.get('FileName')?.touched && categorybannerform.get('FileName')?.errors?.['minlength']) {
+            <small class="text-danger">File Name must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3 mt-md-3">
+          <label class="form-label">Content Type</label>
+          <input type="text" placeholder="Enter Content Type" class="form-control py-2" required formControlName="ContentType">
+          @if (categorybannerform.get('ContentType')?.touched && categorybannerform.get('ContentType')?.errors?.['required']) {
+            <small class="text-danger">Content Type is required.</small>
+          }
+          @if (categorybannerform.get('ContentType')?.touched && categorybannerform.get('ContentType')?.errors?.['minlength']) {
+            <small class="text-danger">Content Type must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Frame</label>
+          <select class="form-select py-2" required formControlName="Frame" >
+            <option value="">Select Frame</option>
+            <option value="CatLeft">CatLeft</option>
+            <option value="CatRight">CatRight</option>
+          </select>
+          @if (categorybannerform.get('Frame')?.touched && categorybannerform.get('Frame')?.errors?.['required']) {
+            <small class="text-danger">Frame is required.</small>
+          }
+          @if (categorybannerform.get('Frame')?.touched && categorybannerform.get('Frame')?.errors?.['minlength']) {
+            <small class="text-danger">Frame must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Merchant URL</label>
+          <input type="url" placeholder="https://example.com" class="form-control py-2" required formControlName="MerchantURL">
+          @if (categorybannerform.get('MerchantURL')?.touched && categorybannerform.get('MerchantURL')?.errors?.['required']) {
+            <small class="text-danger">Merchant URL is required.</small>
+          }
+          @if (categorybannerform.get('MerchantURL')?.touched && categorybannerform.get('MerchantURL')?.errors?.['pattern']) {
+            <small class="text-danger">Enter a valid URL starting with http:// or https://</small>
+          }
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Date</label>
+          <input type="date" class="form-control py-2" required formControlName="UploadDate">
+          @if (categorybannerform.get('UploadDate')?.touched && categorybannerform.get('UploadDate')?.errors?.['required']) {
+            <small class="text-danger">Date is required.</small>
+          }
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Select image</label>
+          <input type="file" class="form-control py-2" required
+          (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+          @if (categorybannerform.get('Imagedata')?.touched && categorybannerform.get('ImageData')?.errors?.['required']) {
+            <small class="text-danger">Banner Image is required.</small>
+          }
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn custom-btn d-block mx-auto" >{{uploading() ? 'Uploading...' : 'Upload Banner'}}</button>
+  </form>
+</div>

@@ -1,0 +1,35 @@
+<!-- Loading Spinner (optional) -->
+<div class="container-fluid cf py-4">
+  <div class="container p-0">
+    <!-- Loader while fetching popular coupons -->
+    <div *ngIf="!popularcoupons().length" class="text-center my-5">
+      <div class="spinner-border" style="color:#004267"></div>
+      <!-- <p class="text-muted mt-2">Loading popular coupons...</p> -->
+    </div>
+
+    <!-- Coupons Grid -->
+    <div class="row g-1 g-md-2" *ngIf="popularcoupons().length">
+      <div class="col-3" *ngFor="let deal of visibleDeals; trackBy: trackById">
+        <div class="card shadow text-center coupon-card">
+          <a [href]="deal.merchantURL" target="_blank"><img [src]="'data:image/jpeg;base64,' + deal.imageData" class="img-fluid w-100 p-1 p-md-2 coupon-img" alt="{{ deal.title }}"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Show More / Show Less -->
+    <div
+      *ngIf="popularcoupons().length > 12"
+      class="d-flex justify-content-center align-items-center mt-4"
+    >
+      <button
+        type="button"
+        class="btn  px-3 fs-5 show-more-btn"
+        style="background-color: #003057; color: white;"
+        (click)="toggleShowMore()"
+      >
+        {{ showAll ? 'Show less' : 'Show more' }}
+      </button>
+    </div>
+
+  </div>
+</div>

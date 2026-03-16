@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="container p-0">
+      <div class="row pt-5 pb-3">
+
+          <div class="col-12 col-lg-3  text-center text-lg-start">
+              <div class="main">
+                  <div>
+                      <img src="./Bueteshop-footer-logo.svg" alt="footerlogo" class="footerlogo">
+                  </div>
+                  <div class=" ms-2 ms-lg-3 ms-xl-4">
+                    <a href="https://www.facebook.com/profile.php?id=61583861555028" target="_blank"> <img width="40" height="40" src="fb.svg" class="footericon"> </a>
+                    <a href="https://www.instagram.com/bueteshop/?hl=en" target="_blank"> <img width="40" height="40" src="./insta.svg" alt="insta" class="footericon"> </a>
+                    <a href="https://linkedin.com" target="_blank"> <img width="40" height="40" src="./linkedin.svg" alt="linked" class="footericon"> </a>
+                    <a href="https://x.com" target="_blank"> <img width="40" height="40" src="./x.svg" alt="twitter" class="footericon"> </a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-12 col-lg-3 mt-4 mt-lg-0 text-center text-lg-start d-flex justify-content-center">
+            <div>
+              <h4 style="color:#00a395;">Help & Support</h4>
+              <p class="mt-2 mt-lg-4 faq">
+                  <a class="text-decoration-none " routerLink="/faq" (click)="scroll()">FAQ</a><br>
+                  <a class="text-decoration-none " routerLink="/howitworks" (click)="scroll()">How it Works</a><br>
+                  <a class="text-decoration-none " >Missing Cashback</a><br>
+                  <a class="text-decoration-none " routerLink="/contactus" (click)="scroll()">Contact Us</a>
+              </p>
+            </div>
+          </div>
+
+
+          <div class="col-12 col-lg-3  text-center text-lg-start d-flex justify-content-center">
+            <div>
+              <h4 style="color:#00a395;">Bueteshop</h4>
+              <p class="mt-2 mt-lg-4 link">
+                  <a class="text-decoration-none " routerLink="/aboutus" (click)="scroll()">About Us</a><br>
+                  <a class="text-decoration-none " routerLink="/carrers" (click)="scroll()">Careers</a><br>
+                  <a class="text-decoration-none " routerLink="/termsofservices" (click)="scroll()">Terms and Conditions</a><br>
+                  <a class="text-decoration-none " routerLink="/privacypolicy" (click)="scroll()">Privacy Policy</a><br>
+              </p>
+            </div>
+          </div>
+
+
+          <div class="col-12  col-lg-3   text-center text-lg-start main1">
+
+              <h4 style="color:#00a395;">Newsletter</h4>
+
+                <p class="mt-2 mt-lg-4 mb-0 news">Please Subscribe to have</p>
+                <p class="mb-0 news">new coupons lists delivered</p>
+                <p class=" news">directly to your inbox</p>
+
+              <form [formGroup]="emailform" (ngSubmit)="subscribe()">
+                <div class="mb-3" >
+                  <input type="email" placeholder="Enter Your email" class="form-control rounded-pill py-1 ps-3 pe-4 place text-white" required formControlName="emailAddress">
+                  @if (emailform.get('emailAddress')?.touched && emailform.get('emailAddress')?.errors?.['required'])  {
+                    <small class="text-danger">Email is required.</small>
+                  }
+                </div>
+                <div class="text-xl-start text-center"> <!-- 👈 Center below 1199px, start above -->
+                  <button type="submit" class="btn btn1 text-white rounded-pill w-100">SUBMIT</button>
+                </div>
+              </form>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+<div class="container mt-4 p-0" >
+  <div class="d-lg-flex justify-content-between text-center" [ngStyle]="{'color':'#928f8f'}">
+    <div class="d-none d-md-block">
+      <p><i class="bi bi-c-circle"></i>
+      <span class="ms-2" >2025 - <span [ngStyle]="{'color':'#112f57'}" class="fw-medium"> Bueteshop</span> All Rights Reserved | An Initiative of Kredas IT & ITES India Pvt.Ltd.</span></p>
+    </div>
+    <div class="d-block d-md-none">
+      <p class="mb-1"><i class="bi bi-c-circle"></i><span class="ms-2" >2025 - <span [ngStyle]="{'color':'#112f57'}" class="fw-medium"> Bueteshop</span> All Rights Reserved</span></p>
+      <p class="mb-1">An Initiative of Kredas IT & ITES India Pvt.Ltd.</p>
+    </div>
+    <p class="text-center">Prowered by <a href="https://www.kredasit.com" target="_blank" class="text-decoration-none"> <span [ngStyle]="{'color':'#00a395'}"> www.kredasit.com</span> </a> </p>
+  </div>
+</div>
+
+
+
+

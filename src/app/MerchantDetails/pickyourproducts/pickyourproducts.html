@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center align-items-center con">
+  <form class="form-container" [formGroup]="productform" (ngSubmit)="upload()">
+    <h2 class="text-center">Upload Pick Your Products</h2>
+
+
+        <div class="mb-3 mt-3">
+          <input type="text" class="form-control py-2" formControlName="ProductName" placeholder="Enter Product Name" required>
+          @if (productform.get('ProductName')?.touched && productform.get('ProductName')?.errors?.['required']) {
+            <small class="text-danger">Product Name is required.</small>
+          }
+          @if (productform.get('ProductName')?.touched && productform.get('ProductName')?.errors?.['minlength']) {
+            <small class="text-danger">Product Name must be at least 3 characters.</small>
+          }
+        </div>
+
+
+        <div class="mb-3 mt-3">
+          <input type="number" class="form-control py-2" formControlName="Price" placeholder="Enter Product Price" required>
+          @if (productform.get('Price')?.touched && productform.get('Price')?.errors?.['required']) {
+            <small class="text-danger">Product Price is required.</small>
+          }
+          @if (productform.get('Price')?.touched && productform.get('Price')?.errors?.['min']) {
+            <small class="text-danger">Product Price must be greater than 0.</small>
+          }
+        </div>
+
+
+
+        <!-- <div class="mb-3">
+          <input type="number" class="form-control py-2" formControlName="MerchantID" placeholder="Enter Merchant Id" required>
+          @if(productform.get('MerchantID')?.touched && productform.get('MerchantID')?.errors?.['required']) {
+            <small class="text-danger">Merchant ID is required.</small>
+          }
+        </div>
+
+
+        <div class="mb-3">
+          <input type="url" class="form-control py-2" formControlName="MerchantURL" placeholder="Enter Merchant Website Url" required>
+          @if (productform.get('MerchantURL')?.touched && productform.get('MerchantURL')?.errors?.['required']) {
+            <small class="text-danger">Merchant Website Url is required.</small>
+          }
+          @if (productform.get('MerchantURL')?.touched && productform.get('MerchantURL')?.errors?.['pattern']) {
+            <small class="text-danger">Enter a valid URL starting with http:// or https://</small>
+          }
+        </div> -->
+
+        <div class="mb-3 ">
+          <input type="file" class="form-control py-2" placeholder="Upload Image"
+          (change)="onFileSelected($event)" accept="image/*" id="fileInput" required>
+          @if (productform.get('ProductImage')?.touched && productform.get('ProductImage')?.errors?.['required']) {
+            <small class="text-danger">Product Image is required.</small>
+          }
+        </div>
+
+        <div class="mb-3">
+          <input type="date" class="form-control py-2" formControlName="UploadedDate" required>
+          @if (productform.get('UploadedDate')?.touched && productform.get('UploadedDate')?.errors?.['required']) {
+            <small class="text-danger">Uploaded Date is required.</small>
+          }
+        </div>
+
+    <button type="submit" class="btn custom-btn d-block mx-auto" style="width: 100%;">Submit</button>
+  </form>
+</div>

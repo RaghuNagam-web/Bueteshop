@@ -1,0 +1,34 @@
+<div class="d-flex align-items-center justify-content-center">
+  <form class="form-container" [formGroup]="categoryform" (ngSubmit)="upload()">
+    <h2 class="text-center">Upload Category</h2>
+    <!-- <div class="mb-3 mt-3">
+      <label class="form-label">Merchant Id</label>
+      <input type="number" placeholder="Enter Merchant Id" class="form-control py-2" required formControlName="merchantId">
+      @if (categoryform.get('merchantId')?.touched && categoryform.get('merchantId')?.errors?.['required']) {
+        <small class="text-danger">Merchant ID is required.</small>
+      }
+    </div> -->
+    <div class="mb-3 mt-3">
+      <label class="form-label">Category Name</label>
+      <input type="text" placeholder="Enter Category Name" class="form-control py-2" required formControlName="categoryName">
+      @if (categoryform.get('categoryName')?.touched && categoryform.get('categoryName')?.errors?.['required']) {
+        <small class="text-danger">Category Name is required.</small>
+      }
+      @if (categoryform.get('categoryName')?.touched && categoryform.get('categoryName')?.errors?.['minlength']) {
+        <small class="text-danger">Category Name must be at least 3 characters.</small>
+      }
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea type="text" placeholder="Enter Description" class="form-control py-2" rows="3" required formControlName="description"></textarea>
+      @if (categoryform.get('description')?.touched && categoryform.get('description')?.errors?.['required']) {
+        <small class="text-danger">Description is required.</small>
+      }
+      @if (categoryform.get('description')?.touched && categoryform.get('description')?.errors?.['maxlength']) {
+        <small class="text-danger">Description must be at most 100 characters.</small>
+      }
+    </div>
+    <button type="submit" class="btn custom-btn d-block mx-auto" style="width: 50%;">Save</button>
+  </form>
+</div>
+

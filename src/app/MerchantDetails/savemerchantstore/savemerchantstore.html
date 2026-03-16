@@ -1,0 +1,96 @@
+<div class="d-flex align-items-center justify-content-center">
+  <form class="form-container"[formGroup]="saveform" (ngSubmit)="save()">
+    <h2 class="text-center">Save Store</h2>
+    <div class="row">
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Store Id</label>
+          <input type="number" placeholder="Enter Store Id" class="form-control py-2" required formControlName="StoreID">
+          @if (saveform.get('StoreID')?.touched && saveform.get('StoreID')?.errors?.['required']) {
+            <small class="text-danger">Merchant ID is required.</small>
+          }
+          @if (saveform.get('StoreID')?.touched && saveform.get('StoreID')?.errors?.['minLength']) {
+            <small class="text-danger">Merchant ID must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Store Name</label>
+          <input type="text" placeholder="Enter Store Name" class="form-control py-2" required formControlName="StoreName">
+          @if (saveform.get('StoreName')?.touched && saveform.get('StoreName')?.errors?.['required']) {
+            <small class="text-danger">Store Name is required.</small>
+          }
+          @if (saveform.get('StoreName')?.touched && saveform.get('StoreName')?.errors?.['minLength']) {
+            <small class="text-danger">Store Name must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Store Address</label>
+          <input type="text" placeholder="Enter Store Address" class="form-control py-2" rows="5" required formControlName="StoreAddress">
+          @if (saveform.get('StoreAddress')?.touched && saveform.get('StoreAddress')?.errors?.['required']) {
+            <small class="text-danger">Store Address is required.</small>
+          }
+          @if (saveform.get('StoreAddress')?.touched && saveform.get('StoreAddress')?.errors?.['maxLength']) {
+            <small class="text-danger">Store Address must be at most 100 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">About Description</label>
+          <textarea type="text" placeholder="Enter About Description" class="form-control py-2"  required formControlName="AboutDescription"></textarea>
+          @if (saveform.get('AboutDescription')?.touched && saveform.get('AboutDescription')?.errors?.['required']) {
+            <small class="text-danger">Description is required.</small>
+          }
+          @if (saveform.get('AboutDescription')?.touched && saveform.get('AboutDescription')?.errors?.['maxLength']) {
+            <small class="text-danger">About Description must be at most 100 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3">
+          <label class="form-label">About Tagline</label>
+          <textarea type="text" placeholder="Enter About Tagline" class="form-control py-2"  required formControlName="Tagline"></textarea>
+          @if (saveform.get('Tagline')?.touched && saveform.get('Tagline')?.errors?.['required']) {
+            <small class="text-danger">About Tagline is required.</small>
+          }
+          @if (saveform.get('Tagline')?.touched && saveform.get('Tagline')?.errors?.['maxLength']) {
+            <small class="text-danger">About Tagline must be at most 100 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Merchant Logo</label>
+          <input type="file" placeholder="Enter Merchant Logo" class="form-control py-2" required (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+          @if (saveform.get('MerchantLogo')?.touched && saveform.get('MerchantLogo')?.errors?.['required']) {
+            <small class="text-danger">Merchant Logo is required.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Landing Banner</label>
+          <input type="file" placeholder="Enter Landing Banner" class="form-control py-2" required (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+          @if (saveform.get('LandingBanner')?.touched && saveform.get('LandingBanner')?.errors?.['required']) {
+            <small class="text-danger">Loading Banner is required.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Hero Banner Image</label>
+          <input type="file" placeholder="Enter Hero Banner Image" class="form-control py-2" required (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+          @if (saveform.get('HeroBannerImage')?.touched && saveform.get('HeroBannerImage')?.errors?.['required']) {
+            <small class="text-danger">Hero Banner Image is required.</small>
+          }
+        </div>
+      </div>
+    </div>
+      <button type="submit" class="btn custom-btn" >Save Store</button>
+  </form>
+</div>
+

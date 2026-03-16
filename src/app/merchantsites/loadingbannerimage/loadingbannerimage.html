@@ -1,0 +1,36 @@
+
+
+<!-- <div *ngIf="!islanding()" class="container p-0">
+  <img [src]="'data:image/png;base64,'+merchantimages().landingBanner" class="img-fluid w-100">
+</div>
+
+<div *ngIf="islanding()" class="container p-0">
+  <img src="landinghide.jpeg" alt="landing banner" class="img-fluid w-100">
+</div> -->
+
+
+@if (merchantimages()) {
+  <div class="container ">
+    <img [src]="'data:image/png;base64,'+merchantimages().landingBanner" class="img-fluid w-100">
+  </div>
+}
+@else {
+  <div class="container">
+    <img src="landinghide.jpeg" alt="landing banner" class="img-fluid w-100">
+  </div>
+}
+
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="d-flex justify-content-center align-items-center flex-column share-page" style="background-color:#fff;">
+    <button
+      class="rounded-pill d-flex justify-content-center align-items-center gap-2 border border-2 mt-5"
+      style="color:#000; padding-right:6rem; width:auto; padding-left:6rem; background-color:#fff;"
+      (click)="share()">
+      <i class="bi bi-box-arrow-up fw-medium"></i> Share
+    </button>
+    <p class="pt-3" style="color:#000000; font-weight:500;">Share this page with your friends.</p>
+  </div>
+</div>
+
+
+

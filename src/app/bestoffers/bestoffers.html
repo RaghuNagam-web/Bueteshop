@@ -1,0 +1,86 @@
+<!-- <app-carousel></app-carousel> -->
+<div class="container-fluid  con p-0">
+  <div class="container container1 p-0 position-relative">
+    <img src="./bs-topstrip-new.png" class="img-fluid w-100">
+    <img src="./flower.png" alt="flower" class="d-block img-fluid flower">
+  </div>
+</div>
+<div class="container-fluid con1">
+  <div class="container p-sm-0">
+    <ul class="breadcrumb py-2 py-lg-3 mb-0">
+      <li class="breadcrumb-item"><a class="text-decoration-none fs-5 bre" routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active fw-semibold fs-5 bre">Best Offers</li>
+    </ul>
+  </div>
+</div>
+<div class="container-fluid cf">
+  <div class="container p-sm-0" > <!--style="max-width:62% ;width: 100%;"-->
+    <h4 class="py-3">BEST OFFERS</h4>
+  </div>
+
+    <app-seasonaloffers></app-seasonaloffers>
+
+
+
+  <div class="container-fluid pb-3 pb-lg-4 d-flex justify-content-center align-items-center">
+    <div class="container p-0">
+      <!-- Loader while fetching popular coupons -->
+      <div *ngIf="!bestoffercoupons().length" class="text-center my-5">
+        <div class="spinner-border" style="color:#004267"></div>
+        <!-- <p class="text-muted mt-2">Loading Bestoffer coupons...</p> -->
+      </div>
+
+      <!-- Coupons Grid -->
+      <div class="row g-1 g-md-2" *ngIf="bestoffercoupons().length">
+        <div class="col-3" *ngFor="let deal of visibleDeals; trackBy: trackById">
+          <div class="card shadow text-center h-100 coupon-card">
+            <a [href]="deal.merchantUrl" target="_blank"> <img [src]="'data:image/jpeg;base64,' + deal.adPost" class="img-fluid w-100 p-1 p-md-2 coupon-img" alt="{{ deal.title }}"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Show More / Show Less -->
+      <div
+        *ngIf="bestoffercoupons().length > 12"
+        class="d-flex justify-content-center align-items-center mt-4 mt-lg-5"
+      >
+        <button
+          type="button"
+          class="btn  px-3 fs-5 show-more-btn"
+          style="background-color: #003057; color: white;"
+          (click)="toggleShowMore()"
+        >
+          {{ showAll ? 'Show less' : 'Show more' }}
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid cf1 pb-4 pb-lg-5 pt-3 pt-sm-4 pt-lg-5">
+  <div class="container p-0">
+      <div class="row">
+          <div class="col-9">
+            <div *ngIf="isloadingleft()">
+              <div class="spinner-border" style="color:#004267;" role="status"></div>
+              <!-- <p class="text-muted mt-2">Loading Leftbanner...</p> -->
+            </div>
+            <a [href]="leftmerchanturl()" target="_blank"><img *ngIf="!isloadingleft()" [src]="leftimage()" class="w-100" ></a>
+          </div>
+
+          <div class="col-3 ps-0 ps-lg-1">
+            <div *ngIf="isloadingright()">
+              <div class="spinner-border" style="color:#004267;"></div>
+              <!-- <p class="text-muted mt-2">Loading Rightbanner...</p> -->
+            </div>
+            <a [href]="rightmerchanturl()" target="_blank"> <img *ngIf="!isloadingright()" [src]="rightimage()" class="w-100"></a>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+
+
+

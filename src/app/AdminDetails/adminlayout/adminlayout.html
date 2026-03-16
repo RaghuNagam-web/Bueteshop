@@ -1,0 +1,219 @@
+<div class="container-fluid  con p-0 position-relative">
+  <div class="container container1 p-0">
+    <img src="./bs-topstrip-new.png" class="img-fluid w-100">
+    <img src="./flower.png" alt="flower" class="d-block img-fluid flower">
+  </div>
+</div>
+<div class="container-fluid con1 mb-4 mb-xl-5">
+  <div class="container">
+    <ul class="breadcrumb py-2 py-lg-3 mb-0">
+      <li class="breadcrumb-item"><a class="text-decoration-none fs-5" routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active fw-semibold fs-5">{{currentpage}}</li>
+    </ul>
+  </div>
+</div>
+
+
+<div *ngIf="recievedata()" class="container position-relative mb-4 mb-xl-5">
+    <div class="d-flex align-items-center justify-content-between my-gradient px-3 py-1">
+      <nav class="navbar navbar-expand-lg">
+        <div class="d-none d-lg-flex align-items-center">
+          <i class="bi bi-person user-icon  me-3"></i>
+          <h2 class="text-white mt-2 ">Admin Dashboard</h2>
+        </div>
+          <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      </nav>
+      <!-- <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bell text-white fs-5" ></i>
+        <p class="text-white fs-3 mb-0">{{name}}</p>
+        <img src="./img-2.png" alt="merchant" class="icon">
+        <i class="bi bi-chevron-down text-white fw-medium"></i>
+      </div> -->
+    </div>
+
+    <div class="row g-0">
+      <div class="col-4 d-none d-lg-flex flex-column link">
+        <ul class="navbar-nav flex-grow-1">
+          <!-- <li class="nav-item">
+            <a class="nav-link px-2 fs-5" routerLink="dashboard" routerLinkActive="active1">
+               <i class="bi bi-columns-gap me-2 text-white"></i>
+              Dashboard
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link px-2 fs-5" routerLink="accountinformation" routerLinkActive="active1" >
+              <i class="bi bi-person me-2 text-white"></i>
+              Account Information
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link px-2 fs-5" routerLink="reports" routerLinkActive="active1" >
+              <i class="bi bi-bar-chart me-2 text-white"></i>
+              Reports
+            </a>
+          </li> -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link px-2 fs-5" routerLink="useradmin" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}">
+              <i class="bi bi-person-gear me-2 text-white"></i>
+              Admin Profile
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="adminlogin" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}">
+              <i class="bi bi-person-gear me-2 text-white"></i>
+              Admin Login
+            </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="sliderimagesupload" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}">
+              <i class="bi bi-image me-2 text-white"></i>
+              Slider Images Upload
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link px-2 fs-5 dropdown-toggle cur" data-bs-dismiss="offcanvas" role="button" data-bs-toggle="dropdown" routerLink="bannerimagesupload" routerLinkActive="active1" >
+              <i class="bi bi-images me-2 text-white"></i>
+              Banners Images Upload
+            </a>
+            <ul class="dropdown-menu ">
+              <li><a class="dropdown-item fw-medium" routerLink="bannersupload" >HomePage Banners Upload</a></li>
+              <li><a class="dropdown-item fw-medium" routerLink="categorybanners" >Categories Banners Upload</a></li>
+              <li><a class="dropdown-item fw-medium" routerLink="topcouponbanners" >TopCoupon Banners Upload</a> </li>
+              <li><a class="dropdown-item fw-medium" routerLink="bestofferbanners" >BestOffers Banners Upload</a> </li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link px-2 fs-5"
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="seasonaloffersupload" routerLinkActive="active1" >
+              <i class="bi bi-image-alt me-2 text-white"></i>
+              Seasonal Offers Upload
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="couponsapproval" routerLinkActive="active1" >
+              <i class="bi bi-prescription me-2 text-white"></i>
+              Coupons Approval
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="productapproval" routerLinkActive="active1">
+              <i class="bi bi-clipboard2-check me-2 text-white"></i>
+              Products Approval
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+        <hr>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="/help">
+              <i class="bi bi-question-circle me-2 text-white"></i>
+              Help
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="/settings">
+              <i class="bi bi-gear me-2 text-white"></i>
+              Settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" (click)="logout()">
+              <i class="bi bi-box-arrow-right me-2 text-white"></i>
+              Sign Out
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-8 link1">
+        <router-outlet />
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="offcanvas offcanvas-start d-lg-none custom-offcanvas" id="offcanvasMenu" data-bs-scroll="true" data-bs-backdrop="false">
+          <div class="offcanvas-header color">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-person user-icon me-2 me-sm-3"></i>
+              <h2 class="mt-2 text-white">Admin Dashboard</h2>
+              <button type="button" class="btn-close btn-close-white fs-6 fs-md-5" data-bs-dismiss="offcanvas"></button>
+            </div>
+          </div>
+          <div class="offcanvas-body body d-flex flex-column">
+             <ul class="navbar-nav flex-grow-1">
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="sliderimagesupload" routerLinkActive="active1">
+                  <i class="bi bi-image me-2 text-white"></i>
+                  Slider Images Upload
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link px-2 fs-5 dropdown-toggle cur" role="button" data-bs-toggle="dropdown" routerLink="bannerimagesupload" routerLinkActive="active1">
+                  <i class="bi bi-images me-2 text-white"></i>
+                  Banners Images Upload
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item fw-medium" data-bs-dismiss="offcanvas" routerLink="bannersupload" >HomePage Banners Upload</a></li>
+                  <li><a class="dropdown-item fw-medium" data-bs-dismiss="offcanvas" routerLink="categorybanners" >Categories Banners Upload</a></li>
+                  <li><a class="dropdown-item fw-medium" data-bs-dismiss="offcanvas" routerLink="topcouponbanners" >TopCoupon Banners Upload</a> </li>
+                  <li><a class="dropdown-item fw-medium" data-bs-dismiss="offcanvas" routerLink="bestofferbanners" >BestOffers Banners Upload</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="seasonaloffersupload" routerLinkActive="active1">
+                  <i class="bi bi-image-alt me-2 text-white"></i>
+                  Seasonal Offers Upload
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="couponsapproval" routerLinkActive="active1">
+                  <i class="bi bi-prescription me-2 text-white"></i>
+                  Coupons Approval
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="productapproval" routerLinkActive="active1">
+                  <i class="bi bi-clipboard2-check me-2 text-white"></i>
+                  Products Approval
+                </a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <hr>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="/help">
+                  <i class="bi bi-question-circle me-2 text-white"></i>
+                  Help
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="/settings">
+                  <i class="bi bi-gear me-2 text-white"></i>
+                  Settings
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur"  (click)="logout()">
+                  <i class="bi bi-box-arrow-right me-2 text-white"></i>
+                  Sign Out
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="!recievedata()">
+  <div class="d-flex align-items-center justify-content-between my-gradient px-3 py-1">
+    <div class=" d-flex align-items-center">
+      <i class="bi bi-person user-icon  me-3"></i>
+      <h2 class="text-white mt-2 ">Admin Dashboard</h2>
+    </div>
+  </div>
+  <div class="data mb-4 mb-sm-5">
+    <app-adminlogin (Login)="data($event)"></app-adminlogin>
+  </div>
+</div>

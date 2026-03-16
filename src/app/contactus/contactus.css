@@ -1,0 +1,29 @@
+.con{
+  background-color: #edf7fd;
+}
+.form-container{
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.2);
+  width: 100%;
+}
+.custom-btn{
+  background-color: #00a395  !important;
+  color: white;
+  width: 100%;
+}
+.box{
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: -4px 0 5px #00a395;
+  width: 70%;
+}
+
+@media (max-width:575px){
+  .box{
+    width: 100%;
+  }
+}
+

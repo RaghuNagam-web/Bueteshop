@@ -1,0 +1,21 @@
+.container-fluid{
+  background-color: #004267;
+}
+input[type="search"]{
+  max-width: 70%;
+}
+.cf{
+  background-color: #eeedeb;
+}
+ul{
+  margin: 0px;
+}
+a{
+  color: #848181 !important;
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    /* float: left; */
+    padding-right: var(--bs-breadcrumb-item-padding-x);
+    color: var(--bs-breadcrumb-divider-color);
+    content: var(--bs-breadcrumb-divider, "/");
+}

@@ -1,0 +1,113 @@
+<!-- <div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between">
+    <h2>Pending Coupons</h2>
+    <button type="submit" class="btn btn-white border-primary text-primary">Refersh</button>
+  </div>
+
+
+    <table class="table table-bordered mt-4">
+      <thead>
+        <tr class="text-center">
+          <th>ID</th>
+          <th>Coupon Name</th>
+          <th>Request Slot Id</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+    </table>
+
+  <hr>
+
+  <h2 class="mb-4">Approved Coupons</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr class="text-center">
+        <th>ID</th>
+        <th>Coupon Name</th>
+        <th>Assigned Slot Id</th>
+      </tr>
+    </thead>
+
+  </table>
+</div> -->
+
+
+<div class="container py-5">
+
+  <!-- Header -->
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+    <h2 class="mb-0" [ngStyle]="{'color':'#0e867e'}">Pending Coupons</h2>
+    <button type="button"
+            class="btn btn-outline-primary"
+            (click)="refresh()"
+            [disabled]="isLoading()">
+       Refresh
+    </button>
+  </div>
+
+  <!-- Loader -->
+  <div *ngIf="isLoading()" class="text-center py-5">
+    <div class="spinner-border" role="status" [ngStyle]="{'color':'#004267'}"></div>
+    <p class="text-muted mt-2">Loading pending coupons...</p>
+  </div>
+
+  <!-- Pending Coupons Table -->
+  <div class="table-responsive mt-4" *ngIf="!isLoading()">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>ID</th>
+          <th>Coupon Name</th>
+          <th>Request Slot Id</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let coupon of pendingCoupons; trackBy: trackById">
+          <td>{{ coupon.id }}</td>
+          <td>{{ coupon.couponName }}</td>
+          <td>{{ coupon.requestedSlotId }}</td>
+          <td>
+            <button class="btn btn-success btn-sm me-2"
+                    [disabled]="isApproving()[coupon.id]"
+                    (click)="approveCoupon(coupon.id)">
+             {{isApproving()[coupon.id] ? 'Approving...' : 'Approve'}}
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="pendingCoupons.length === 0">
+          <td colspan="4" class="text-muted">No pending coupons found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- Approved Coupons -->
+  <!-- <h2 class="mb-4" [ngStyle]="{'color':'#0e867e'}">Approved Coupons</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>ID</th>
+          <th>Coupon Name</th>
+          <th>Assigned Slot Id</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let coupon of approvedCoupons; trackBy: trackById">
+          <td>{{ coupon.id }}</td>
+          <td>{{ coupon.couponName }}</td>
+          <td>{{ coupon.assignedSlotId }}</td>
+        </tr>
+        <tr *ngIf="approvedCoupons.length === 0">
+          <td colspan="3" class="text-muted">No approved coupons yet.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>-->
+
+</div>
+
+

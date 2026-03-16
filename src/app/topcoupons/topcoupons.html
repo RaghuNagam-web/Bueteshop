@@ -1,0 +1,49 @@
+<div class="container-fluid  con p-0 position-relative">
+  <div class="container container1 p-0">
+    <img src="./bs-topstrip-new.png" class="img-fluid w-100">
+    <img src="./flower.png" alt="flower" class="d-block img-fluid flower">
+  </div>
+</div>
+<div class="container-fluid con1">
+  <div class="container p-0">
+    <ul class="breadcrumb py-2 py-lg-3 mb-0">
+      <li class="breadcrumb-item"><a class="text-decoration-none fs-5 bre" routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active fw-semibold fs-5 bre">Top Coupons</li>
+    </ul>
+  </div>
+</div>
+<div class="container-fluid cf">
+  <div class="container pt-3 pt-lg-5 pb-1 px-0"> <!--style="max-width: 62%;width: 100%;"-->
+    <h4 >TODAY'S TOP COUPONS & OFFERS</h4>
+  </div>
+</div>
+<div>
+  <app-coupons></app-coupons>
+</div>
+
+
+  <div class="container-fluid pb-0 pb-sm-2 pb-lg-4 pt-0 pt-sm-4 pt-lg-5">
+    <div class="container p-0">
+      <div class="row mt-3 mt-lg-4 mt-xl-5">
+        <div class="col-9">
+          <div *ngIf="isloadingleft()">
+            <div class="spinner-border" style="color:#004267;" role="status"></div>
+            <!-- <p class="text-muted mt-2">Loading Leftbanner...</p> -->
+          </div>
+          <a [href]="leftmerchanturl()" target="_blank"> <img *ngIf="!isloadingleft()" [src]="leftimage()" class="w-100" > </a>
+        </div>
+
+        <div class="col-3 ps-0 ps-lg-1">
+          <div *ngIf="isloadingright()">
+            <div class="spinner-border" style="color:#004267;"></div>
+            <!-- <p class="text-muted mt-2">Loading Leftbanner...</p> -->
+          </div>
+          <a [href]="rightmerchanturl()" target="_blank"> <img *ngIf="!isloadingright()" [src]="rightimage()" class="w-100" ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="mt-4 mt-lg-5 mb-0 mb-sm-5">
+  <app-seasonaloffers></app-seasonaloffers>
+</div>
+

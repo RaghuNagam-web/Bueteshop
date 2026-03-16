@@ -1,0 +1,20 @@
+
+<!-- <div *ngIf="!heroimage()" class="container p-0">
+  <img [src]="'data:image/png;base64,'+merchantimages().heroBannerImage" class="img-fluid w-100" >
+</div>
+
+<div *ngIf="heroimage()" class="container p-0">
+  <img src="herohide.jpeg" class="img-fluid w-100" >
+</div> -->
+
+
+@if (merchantimages()) {
+  <div class="container ">
+    <img [src]="'data:image/png;base64,'+merchantimages().heroBannerImage" class="img-fluid w-100" >
+  </div>
+}
+@else {
+  <div class="container ">
+    <img src="herohide.jpeg" class="img-fluid w-100" >
+  </div>
+}

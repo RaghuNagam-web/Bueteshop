@@ -1,0 +1,33 @@
+<div class="container-fluid cf py-4">
+<div class="container p-0">
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isloading()" class="text-center py-5">
+    <div class="spinner-border" style="color:#004267;" role="status"></div>
+    <!-- <p class="text-muted mt-2">Loading coupons...</p> -->
+  </div>
+
+  <!--Coupons are Not Available-->
+
+  <div *ngIf="!isloading() && !deals.length" class="text-center my-5">
+    <p class="text-muted mt-2">No coupons avaliable Right now.</p>
+  </div>
+
+  <!-- Coupons Grid -->
+  <div *ngIf="!isloading()" class="row g-1 g-md-2">
+    <div class="col-3" *ngFor="let coupon of visibleDeals; trackBy: trackById">
+      <div class="card shadow text-center h-100 coupon-card">
+          <a [href]="coupon.merchantUrl" target="_blank"> <img [src]="coupon.img || coupon.imageUrl || './beautycoupons.jpeg'" alt="Coupon" class="img-fluid w-100 p-1 p-md-2 coupon-img"></a>
+               <!-- style="margin-top: 1rem; object-fit: contain; height: 200px;" -->
+        </div>
+    </div>
+  </div>
+
+  <!-- Show More / Show Less Button -->
+  <div class="text-center mt-3" *ngIf="deals.length > 12 && !isloading()">
+    <button class="btn px-3 fs-5 show-more-btn" style="background-color: #003057; color: white;" (click)="toggleShowMore()">
+      {{ showAll ? 'Show Less' : 'Show More' }}
+    </button>
+  </div>
+</div>
+</div>

@@ -1,0 +1,112 @@
+<div class="container-fluid  con p-0 position-relative">
+  <div class="container container1 p-0">
+    <img src="./bs-topstrip-new.png" class="img-fluid w-100 " >
+    <img src="./flower.png" alt="flower" class="d-block img-fluid flower">
+  </div>
+</div>
+<div class="container-fluid con1 mb-4 mb-xl-5">
+  <div class="container p-0">
+    <ul class="breadcrumb py-2 py-lg-3 mb-0">
+      <li class="breadcrumb-item"><a class="text-decoration-none  fs-5 bre" routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active fw-semibold fs-5 bre">Categories</li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+  <h3 class="cate">Categories</h3>
+  <div class="dropdown custom-dropdowm-menu">
+  <!-- INPUT THAT OPENS & FILTERS DROPDOWN -->
+  <input
+    type="search"
+    class="form-control"
+    placeholder="More Categories"
+    [value]="selectedCategory() || ''"
+    (click)="toggleDropdown()" (input)="search($event)"
+
+    style="color: #676767; border-color: #00a395;">
+
+
+
+  <!-- DROPDOWN MENU -->
+  <ul
+    class="dropdown-menu rounded-0 box custom-dropdowm-menu custom-dropdowm-menu-ul"
+    [class.show]="dropdownVisible()"
+  >
+
+    <!-- LOADING STATE -->
+    <li *ngIf="isloading()" class="dropdown-item text-muted">
+      Loading...
+    </li>
+
+    <!-- CATEGORY LIST -->
+    @for (cat of atozavaliablecoupons(); track $index) {
+      <li>
+        <a
+          class="dropdown-item ellipsis-text"
+          (click)="categorysearch(cat)"
+        >
+          {{ cat }}
+        </a>
+      </li>
+    }
+
+    <!-- EMPTY STATE -->
+    <li *ngIf="message()">
+      <div class="dropdown-item text-muted">
+        <p class="text-center mb-0">No categories found</p>
+      </div>
+    </li>
+
+  </ul>
+
+</div>
+
+</div>
+
+  <div class="row mb-3 mb-lg-5">
+    <div class="col pe-0">
+      <a class="text-decoration-none" routerLink="popularity" routerLinkActive="active1"><h4 class="rounded-start-2 c" [ngStyle]="{'border':'1px solid #00a395','border-right': '0px'}">Popularity</h4></a>
+    </div>
+    <div class="col p-0">
+      <a class="text-decoration-none" routerLink="allcategories" routerLinkActive="active1"><h4 class="c " [ngStyle]="{'border':'1px solid #00a395'}">A-Z</h4> </a>
+    </div>
+    <div class="col ps-0">
+      <a class="text-decoration-none " routerLink="newest" routerLinkActive="active1" > <h4 class="rounded-end-2 c" [ngStyle]="{'border':'1px solid #00a395','border-left': '0px'}">Newest</h4></a>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="container-fluid cf pb-2 pb-lg-4 pt-4 pt-lg-5">
+    <div class="container p-0">
+      <h4>TODAY'S TOP COUPONS & OFFERS</h4>
+
+      <div class="row mt-3 mt-lg-4 mt-xl-5">
+        <div class="col-9">
+          <div *ngIf="isloadingleft()">
+            <div class="spinner-border" style="color:#004267;" role="status"></div>
+            <!-- <p class="text-muted mt-2">Loading Leftbanner...</p> -->
+          </div>
+          <a [href]="leftmerchantUrl()" target="_blank"> <img *ngIf="!isloadingleft()" [src]="leftimage()" class="w-100" > </a>
+        </div>
+
+        <div class="col-3 ps-0 ps-lg-1">
+          <div *ngIf="isloadingright()">
+            <div class="spinner-border" style="color:#004267;"></div>
+            <!-- <p class="text-muted mt-2">Loading Leftbanner...</p> -->
+          </div>
+          <a [href]="rightmerchantUrl()" target="_blank"> <img *ngIf="!isloadingright()" [src]="rightimage()" class="w-100" ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="mt-4">  <!--class="my-5"-->
+    <app-seasonaloffers></app-seasonaloffers>
+  </div>
+</div>
+
+
+
+
+

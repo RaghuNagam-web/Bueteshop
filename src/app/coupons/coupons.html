@@ -1,0 +1,32 @@
+<div class="container-fluid cf pb-4 pt-2 pt-sm-4 mb-4 mb-lg-5">
+  <div class="container p-0">
+
+    <!-- Loader -->
+    <div *ngIf="isLoading()" class="text-center py-5">
+      <div class="spinner-border" style="color:#004267;" role="status"></div>
+      <!-- <p class="text-muted mt-2">Loading coupons...</p> -->
+    </div>
+
+    <!-- Coupon grid -->
+    <div *ngIf="!isLoading()" class="row g-1 g-md-2">
+      <div class="col-3" *ngFor="let deal of visibleDeals; trackBy: trackById">
+        <div class="card shadow text-center h-100 coupon-card">
+
+          <a [href]="deal.merchantUrl" target="_blank"><img [src]="deal.img || deal.imageUrl || './beautycoupons.jpeg'" alt="Coupon" class="img-fluid w-100 p-1 p-md-2 coupon-img"></a>
+               <!-- style="margin-top: 1rem; object-fit: contain; height: 200px;" -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Show more / Show less button -->
+    <div *ngIf="!isLoading()" class="d-flex justify-content-center align-items-center mt-4">
+      <button type="button"
+              class="btn px-3 fs-5 show-more-btn"
+              style="background-color: #003057; color: white;"
+              (click)="toggleShowMore()">
+        {{ showAll ? 'Show less' : 'Show more' }}
+      </button>
+    </div>
+
+  </div>
+</div>

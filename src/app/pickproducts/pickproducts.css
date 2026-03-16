@@ -1,0 +1,39 @@
+.container-fluid {
+    background-color: #edf7fd;
+}
+.container.so{
+    background-color: #d8efef;
+    border-radius: 5px;
+}
+.pt-3{
+    color:#112f57
+}
+.btn{
+    background-color:#00a395;
+    color: white;
+    border-radius: 7px;
+}
+.coupon-card {
+  overflow: hidden; /* Prevent image cropping spill */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.coupon-img {
+  transition: transform 0.4s ease;
+}
+
+.coupon-card:hover .coupon-img {
+  transform: scale(1.06);
+}
+@media (max-width:767px){
+  .coupon-card{
+    border-radius: 5px !important;
+  }
+}
+@media (max-width: 767px) {
+  .show-more-btn {
+    padding: 4px 10px !important;   /* smaller padding */
+    font-size: 16px !important;     /* smaller text */
+  }
+}

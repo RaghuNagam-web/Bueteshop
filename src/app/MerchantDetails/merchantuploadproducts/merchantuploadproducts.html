@@ -1,0 +1,110 @@
+<div class="d-flex align-items-center justify-content-center con">
+  <form class="form-container" [formGroup]="uploadproduct" (ngSubmit)="upload()">
+    <h2 class="text-center">Upload Product </h2>
+    <div class="row">
+      <!-- <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Merchant Id</label>
+          <input type="number" placeholder="Enter Merchant Id" class="form-control py-2" required formControlName="MerchantId">
+          @if (uploadproduct.get('MerchantId')?.touched && uploadproduct.get('MerchantId')?.errors?.['required']) {
+            <small class="text-danger">Merchant ID is required.</small>
+          }
+        </div>
+      </div>-->
+      <div class="col-12 col-lg-6">
+        <div class="mb-3 mt-0 mt-lg-3">
+          <label class="form-label">Product Name</label>
+          <input type="text" placeholder="Enter Product Name" class="form-control py-2" required formControlName="ProductName">
+          @if (uploadproduct.get('ProductName')?.touched && uploadproduct.get('ProductName')?.errors?.['required']) {
+            <small class="text-danger">Product Name is required.</small>
+          }
+          @if (uploadproduct.get('ProductName')?.touched && uploadproduct.get('ProductName')?.errors?.['minlength']) {
+            <small class="text-danger">Product Name must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="mb-3 mt-0 mt-lg-3">
+          <label class="form-label">Brand</label>
+          <input type="text" placeholder="Enter Brand" class="form-control py-2" required formControlName="Brand">
+          @if (uploadproduct.get('Brand')?.touched && uploadproduct.get('Brand')?.errors?.['required']) {
+            <small class="text-danger">Brand is required.</small>
+          }
+          @if (uploadproduct.get('Brand')?.touched && uploadproduct.get('Brand')?.errors?.['minlength']) {
+            <small class="text-danger">Brand must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="mb-3">
+          <label class="form-label">Price</label>
+          <input type="number" placeholder="Enter Price" class="form-control py-2" required formControlName="Price">
+          @if (uploadproduct.get('Price')?.touched && uploadproduct.get('Price')?.errors?.['required']) {
+            <small class="text-danger">Price is required.</small>
+          }
+          @if (uploadproduct.get('Price')?.touched && uploadproduct.get('Price')?.errors?.['min']) {
+            <small class="text-danger">Price must be at greater than 0.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-6">
+        <div class="mb-3 ">
+          <label class="form-label">Selected Category</label>
+          <!-- <input type="number" placeholder="Enter Category Id" class="form-control py-2" required formControlName="CategoryId">
+          @if (uploadproduct.get('CategoryId')?.touched && uploadproduct.get('CategoryId')?.errors?.['required']) {
+            <small class="text-danger">Category ID is required.</small>
+          } -->
+          <select class="form-select" formControlName="CategoryId" required>
+            <option value="">Select Category</option>
+            <option *ngFor="let category of categorylist" [value]="category.id">
+              {{ category.categoryName }}
+            </option>
+          </select>
+          @if (uploadproduct.get('CategoryId')?.touched && uploadproduct.get('CategoryId')?.errors?.['required']) {
+            <small class="text-danger">Category is required.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea type="text" placeholder="Enter Description" class="form-control py-2" rows="3" required formControlName="Description"></textarea>
+          @if (uploadproduct.get('Description')?.touched && uploadproduct.get('Description')?.errors?.['required']) {
+            <small class="text-danger">Description is required.</small>
+          }
+          @if (uploadproduct.get('Description')?.touched && uploadproduct.get('Description')?.errors?.['minlength']) {
+            <small class="text-danger">Description must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Small Image</label>
+          <input type="file" placeholder="Enter Small Image" class="form-control py-2" required (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+          @if (uploadproduct.get('ImageSmall')?.touched && uploadproduct.get('ImageSmall')?.errors?.['required']) {
+            <small class="text-danger">Small Image is required.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Medium Image</label>
+          <input type="file" placeholder="Enter Large Image" class="form-control py-2" required (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+          @if (uploadproduct.get('ImageMedium')?.touched && uploadproduct.get('ImageMedium')?.errors?.['required']) {
+            <small class="text-danger">Large Image is required.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="mb-3 mt-0 mt-xl-3">
+          <label class="form-label">Large Image</label>
+          <input type="file" placeholder="Enter Large Image" class="form-control py-2" required (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+          @if (uploadproduct.get('ImageLarge')?.touched && uploadproduct.get('ImageLarge')?.errors?.['required']) {
+            <small class="text-danger">Large Image is required.</small>
+          }
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn custom-btn" >Upload Product</button>
+  </form>
+</div>

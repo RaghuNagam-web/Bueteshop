@@ -1,0 +1,29 @@
+<div class="container-fluid cf pb-4 pt-4 mb-4 mb-lg-5">
+  <div class="container p-0">
+    <h4 [ngStyle]="{'color':'#004267'}" class="mb-4">PICK YOUR PRODUCTS</h4>
+
+    <!-- Loader -->
+    <div *ngIf="isloading()" class="text-center py-5">
+      <div class="spinner-border" style="color:#004267;" role="status"></div>
+      <!-- <p class="text-muted mt-2">Loading Products...</p> -->
+    </div>
+
+    <!-- Products Grid -->
+    <div *ngIf="!isloading()" class="row g-1 g-md-2">
+      <div class="col-3" *ngFor="let deal of visibleDeals; trackBy: trackById">
+        <div class="card shadow text-center h-100 coupon-card">
+          <a [href]="deal.merchantUrl" target="_blank"> <img [src]="deal.img || deal.imageUrl || './beautycoupons.jpeg'" alt="Product" class="w-100 p-1 p-md-2 coupon-img"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Show more / Show less button -->
+    <div *ngIf="!isloading()" class="d-flex justify-content-center align-items-center mt-4">
+      <button type="button" class="btn px-3 fs-5 show-more-btn"
+              style="background-color: #003057; color: white;"
+              (click)="toggleShowMore()">
+        {{ showAll ? 'Show less' : 'Show more' }}
+      </button>
+    </div>
+  </div>
+</div>

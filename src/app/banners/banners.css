@@ -1,0 +1,14 @@
+.container-fluid.cf {
+    background-color: #edf7fd;
+}
+.spinner-border {
+    color: #004267;
+}
+h4{
+  color: #004267;
+}
+@media (max-width:575px){
+  h4{
+    font-size: 19px;
+  }
+}

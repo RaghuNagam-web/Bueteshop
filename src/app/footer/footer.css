@@ -1,0 +1,78 @@
+.container-fluid{
+    background-color:#004367;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 115px;
+}
+.place{
+    outline: none;
+    border: 1px solid #00a395;
+    background-color: #004367;
+
+}
+.place::placeholder{
+    color: #93acbc;
+}
+.btn1{
+    background-color: #00a395;
+    cursor: pointer;
+    padding: 5px 85px;
+}
+.faq a{
+    color: #93acbc;
+}
+.link a{
+    color: #93acbc;
+}
+.news{
+    color: #93acbc;
+}
+.footerlogo{
+    height: 80px;
+}
+.footericon{
+  margin-right: 0.2rem;
+}
+form{
+  width: 72%;
+}
+/* @media only screen and (max-width:1399px){
+    .main{
+    gap: 93px;
+  }
+} */
+@media only screen and (max-width:1199px){
+    .footerlogo{
+        height: 70px;
+    }
+    form{
+      width: 100%;
+    }
+}
+@media only screen and (max-width:991px){
+  .main{
+    gap: 30px;
+  }
+  form{
+    width: 30%;
+  }
+  .main1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media (max-width:767px){
+  form{
+    width: 50%;
+  }
+}
+@media (max-width:575px){
+  form{
+    width: 70%;
+  }
+}
+

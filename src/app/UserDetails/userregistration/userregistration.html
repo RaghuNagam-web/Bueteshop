@@ -1,0 +1,91 @@
+
+<div class="container my-5" >
+  <form class="form-container" style="max-width:700px; width:100%;"  [formGroup]="register" (ngSubmit)="onRegister()">
+    <h6 class="text-center text-muted fw-medium">EARN CASHBACK EVERY TIME YOU SHOP</h6>
+    <h5 class="text-center">Sign Up with Bueteshop</h5>
+    <div class="d-flex align-items-center justify-content-center  mt-3">
+        <div class="border py-1 px-2 pe-3">
+          <a href="https://www.google.com" target="_blank" class="text-decoration-none"> <img src="google-icon.png" alt="google" class="me-3"><span class="fw-medium text-muted google">Sign Up with Google</span> </a>
+        </div>
+    </div>
+    <div class="position-relative my-5 text-center">
+      <hr>
+      <span class="bg-secondary text-white rounded-circle position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center" style="width:40px; height:40px;">
+        OR
+      </span>
+    </div>
+
+    @if (message()) {
+              <div class="alert alert-danger mb-3">{{ message() }}</div>
+            }
+
+    <div class="row justify-content-center ">
+      <div class="col-md-6 mb-3">
+
+        <label for="name" class="form-label">Username:</label>
+          <input type="text" class="form-control rounded-0" id="name" placeholder="Enter user name" formControlName="userName"/>
+            @if (register.get('userName')?.touched && register.get('userName')?.errors?.['required']) {
+              <small class="text-danger">Full Name is required.</small>
+            }
+            @if (register.get('userName')?.touched && register.get('userName')?.errors?.['minlength']) {
+              <small class="text-danger">Enter at least 4 characters.</small>
+            }
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control rounded-0" id="email" placeholder="Enter email" formControlName="email"/>
+            @if (register.get('email')?.touched && register.get('email')?.errors?.['required']) {
+              <small class="text-danger">Email is required.</small>
+            }
+            @if (register.get('email')?.touched && register.get('email')?.errors?.['email']) {
+              <small class="text-danger">Please enter a valid email address.</small>
+            }
+            @if (register.get('email')?.errors?.['server']) {
+              <small class="text-danger">{{ register.get('email')?.errors?.['server'] }}</small>
+            }
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="password" class="form-label">Password:</label>
+          <input type="password" class="form-control rounded-0" id="password" placeholder="Enter password" formControlName="password"/>
+            @if (register.get('password')?.touched && register.get('password')?.errors?.['required']) {
+              <small class="text-danger">Password is required.</small>
+            }
+            @if (register.get('password')?.touched && register.get('password')?.errors?.['minlength']) {
+              <small class="text-danger">Password must be at least 4 characters.</small>
+            }
+      </div>
+      <div class="mb-3 col-md-6">
+        <label for="mobileNumber" class="form-label">Mobile Number:</label>
+          <input type="tel" class="form-control rounded-0" id="mobileNumber" placeholder="Enter 10-digit mobile number" formControlName="mobileNumber"/>
+            @if (register.get('mobileNumber')?.touched && register.get('mobileNumber')?.errors?.['required']) {
+              <small class="text-danger">Mobile No is required.</small>
+            }
+            @if (register.get('mobileNumber')?.touched && register.get('mobileNumber')?.errors?.['pattern']) {
+              <small class="text-danger">Enter valid 10-digit number.</small>
+            }
+            @if (register.get('mobileNumber')?.errors?.['server']) {
+              <small class="text-danger">{{ register.get('mobileNumber')?.errors?.['server'] }}</small>
+            }
+      </div>
+      <div class="mb-3 col-md-6">
+        <label for="referredBy" class="form-label">Referred By:</label>
+          <input type="text" class="form-control rounded-0" id="referredBy" formControlName="referredBy">
+          @if (register.get('referredBy')?.touched && register.get('referredBy')?.errors?.['required']) {
+            <small class="text-danger">Referred By is required.</small>
+          }
+      </div>
+      <div class="mb-3 col-md-6">
+        <label for="address" class="form-label">Address:</label>
+          <input type="text" class="form-control rounded-0" id="address" placeholder="Enter address" formControlName="address"/>
+            @if (register.get('address')?.touched && register.get('address')?.errors?.['required']) {
+              <small class="text-danger">Please enter address.</small>
+            }
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn text text-white rounded-0 text-center" style="width: 50%;" [disabled]="register.invalid">
+           Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

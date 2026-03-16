@@ -1,0 +1,148 @@
+<!-- <div class="container py-5">
+  <!--Header
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+    <h2 class="mb-0" [ngStyle]="{'color':'#0e867e'}">Pending Products</h2>
+    <button type="button"
+            class="btn btn-outline-primary"
+            (click)="refresh()"
+            [disabled]="isloading()">
+      Refresh
+    </button>
+  </div>
+
+  <div *ngIf="isloading()" class="text-center py-5">
+    <div class="spinner-border" role="status" [ngStyle]="{'color':'#004267'}"></div>
+    <p class="text-muted mt-2">Loading pending products...</p>
+  </div>
+
+  <!-- Pending Products Table
+  <div class="table-responsive mt-4" *ngIf="!isloading()">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let product of pendingproducts; trackBy: trackById">
+          <td>{{ product.id }}</td>
+          <td>{{ product.productName }}</td>
+          <td>
+            <button class="btn btn-success btn-sm me-2"
+                    [disabled]="isApproving[product.id]"
+                    (click)="approveproducts(product.id)">
+              {{isApproving[product.id] ? 'Approving...' : 'Approve'}}
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="pendingproducts.length === 0">
+          <td colspan="4" class="text-muted">No pending products found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- Approved Products Table
+  <h2 class="mb-4" [ngStyle]="{'color':'#0e867e'}">Approved Products</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let product of approvedproducts; trackBy: trackById">
+          <td>{{ product.id }}</td>
+          <td>{{ product.productName }}</td>
+        </tr>
+        <tr *ngIf="approvedproducts.length === 0">
+          <td colspan="2" class="text-muted">No approved products yet.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+
+
+<div class="container py-5">
+  <!--Header-->
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+    <h2 class="mb-0" [ngStyle]="{'color':'#0e867e'}">Pending Products</h2>
+    <button type="button"
+            class="btn btn-outline-primary"
+            (click)="refresh()"
+            [disabled]="isloading()">
+      Refresh
+    </button>
+  </div>
+
+  <div *ngIf="isloading()" class="text-center py-5">
+    <div class="spinner-border" role="status" [ngStyle]="{'color':'#004267'}"></div>
+    <p class="text-muted mt-2">Loading pending products...</p>
+  </div>
+
+  <!-- Pending Products Table -->
+  <div class="table-responsive mt-4" *ngIf="!isloading()">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let product of pendingproducts; trackBy: trackById">
+
+          <td>{{ product.id }}</td>
+          <td>{{ product.productName }}</td>
+          <td>
+            <button class="btn btn-success btn-sm me-2"
+                    [disabled]="isApprove[product.id]"
+                    (click)="approveproducts(product)">
+              {{isApprove[product.id] ? 'Approving...' : 'Approve'}}
+            </button>
+          </td>
+
+        </tr>
+        <tr *ngIf="pendingproducts.length === 0">
+        <td colspan="4" class="text-muted">No pending products found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- Approved Products Table -->
+  <h2 class="mb-4" [ngStyle]="{'color':'#0e867e'}">Approved Products</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-light text-center">
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let product of approvedproducts; trackBy: trackById">
+
+          <td>{{ product.id }}</td>
+          <td>{{ product.productName }}</td>
+
+        </tr>
+        <tr *ngIf="approvedproducts.length === 0">
+          <td colspan="2" class="text-muted">No approved products yet.</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+

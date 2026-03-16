@@ -1,0 +1,7 @@
+hr {
+    margin: 3rem 0rem 2rem 0rem;
+    color: inherit;
+    border: 0;
+    border-top: var(--bs-border-width) solid;
+    opacity: .25;
+}

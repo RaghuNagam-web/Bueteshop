@@ -1,0 +1,131 @@
+{
+  "configVersion": 1,
+  "timestamp": 1764583600741,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-ZB7RGUWB.js",
+        "/manifest.webmanifest",
+        "/styles-GOGJWJPL.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Bueteshop-Logo_Final.svg",
+        "/Bueteshop-footer-logo.svg",
+        "/android-chrome-192x192.png",
+        "/android-chrome-512x512.png",
+        "/apple-touch-icon.png",
+        "/beautycoupons.jpeg",
+        "/bs-seasonal-offer-1.jpg",
+        "/bs-seasonal-offer-2.jpg",
+        "/bs-seasonal-offer-3.jpg",
+        "/bs-seasonal-offer-4.jpg",
+        "/bs-slider-1.jpg",
+        "/bs-slider-2.jpg",
+        "/bs-slider-3.png",
+        "/bs-slider-4.png",
+        "/bs-slider-5.png",
+        "/bs-topstrip-new.png",
+        "/facebook-icon.png",
+        "/favicon-16x16.png",
+        "/favicon-32x32.png",
+        "/fb.svg",
+        "/flower.png",
+        "/google-icon.png",
+        "/herohide.jpeg",
+        "/hidelogo.jpeg",
+        "/img-1.png",
+        "/img-2.png",
+        "/img-3.png",
+        "/insta.svg",
+        "/landinghide.jpeg",
+        "/linkedin.svg",
+        "/producthide.jpeg",
+        "/top-ad-1.png",
+        "/top-ad-2.png",
+        "/user-icon.png",
+        "/x.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/Bueteshop-Logo_Final.svg": "b075209c74d149e564e37d4ca529289ab0df9576",
+    "/Bueteshop-footer-logo.svg": "84a8fd0bfaeefaf3f36a4fde8ca1dfbe6b13a6a8",
+    "/android-chrome-192x192.png": "1c86f06f6ebb9d6180f54aa37805323cb7d0a5f0",
+    "/android-chrome-512x512.png": "ee8195caa77d87efe64e297a1450387fc5fe7621",
+    "/apple-touch-icon.png": "636fdf6d2c9ff1b003c1b6f6d35df4f30a07394d",
+    "/beautycoupons.jpeg": "2755c9d54f7a9b1390cf8ea23d2b7c19a89b4679",
+    "/bs-seasonal-offer-1.jpg": "6659338945e34fcbdd1fd781afafd2a80fb28b28",
+    "/bs-seasonal-offer-2.jpg": "c15e634af981d2570a424ab584482329a8760b2c",
+    "/bs-seasonal-offer-3.jpg": "8b6da4beed83302c33b2d3719be7648a4beb205e",
+    "/bs-seasonal-offer-4.jpg": "db15b9e2484048da8a87274d76e092a38623f370",
+    "/bs-slider-1.jpg": "daea2c85f94084063106184441454b56ceba5324",
+    "/bs-slider-2.jpg": "5b28710b53893bb187ab56dc5d034c29dbc33ee8",
+    "/bs-slider-3.png": "3b267c1d310b61b92dd28f98de3a0064a68ab397",
+    "/bs-slider-4.png": "df316ee19b394b4ce91fe34b10df0568b68dfe98",
+    "/bs-slider-5.png": "6a887e0cf70bc0fab69f90b304b38799d98c1833",
+    "/bs-topstrip-new.png": "221d6284b2b1fc672e36666a6902e1683f53fc6f",
+    "/facebook-icon.png": "7902b83c1a0e71a74e31c396fa7c888568a0dccf",
+    "/favicon-16x16.png": "dd1ff29f9b04b4de43f04c75bcf063cfb9210400",
+    "/favicon-32x32.png": "8704e5f32e6f8bdfc839980923815b62a30a10b2",
+    "/favicon.ico": "fa511ac5cd39ebef0d3858935f95461b33a2465b",
+    "/fb.svg": "318b34a1c8e2ed13e8bc4a999194d29eb785c1fa",
+    "/flower.png": "785d5c47540ce3a112a4ac45eb4ab078286aac4d",
+    "/google-icon.png": "e22f756804399f79d7c305c377135d7cb05a497a",
+    "/herohide.jpeg": "6a8fb73c284e5f986aac9329bee7bda83cc09d43",
+    "/hidelogo.jpeg": "df64b9953ab294ab445ddf521235c5096fd0fd46",
+    "/img-1.png": "a4c9203d565d7cdf534d6e8b286f538e44a353e3",
+    "/img-2.png": "b936bf92cf45cb4c96ab3a9133dd21421fee667d",
+    "/img-3.png": "ab7e976dfd9ea73f7ec33b360fb3f11596544ef9",
+    "/index.html": "2d474836298a6d9e86b9f1906b786503ad436e7a",
+    "/insta.svg": "830fda2cd08f2566e9daffbf6f88f0e921faa4e3",
+    "/landinghide.jpeg": "7fab1a0631be3e17cd7c9668fc302095311868a2",
+    "/linkedin.svg": "b4765a12db44be6cc43d9bbc7d2c639002566470",
+    "/main-ZB7RGUWB.js": "d837cafb2f6b5127e402c7874197634982388ad9",
+    "/manifest.webmanifest": "a4813ab61d7786bc0a4314d836cb2eb65edaf419",
+    "/producthide.jpeg": "0f3198067b27ae8925af15e0f458b2baccf20d91",
+    "/styles-GOGJWJPL.css": "2ee5f19556912f54a92376b675bf50c57a7f7c50",
+    "/top-ad-1.png": "94553910ed9d9cb098ef467acb7e308b8e255ed9",
+    "/top-ad-2.png": "56b44ff109c982cf64864110e6daabd7ceea9d8e",
+    "/user-icon.png": "bd29c5379121ae48ac276e5479bd9c5ca8d308c1",
+    "/x.svg": "690b5a8abaefac101b405119613bfb7563eac2ab"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

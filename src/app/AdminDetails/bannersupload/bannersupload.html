@@ -1,0 +1,32 @@
+ <div class="d-flex justify-content-center align-items-center con">
+  <form class="form-container" [formGroup]="bannerform" (ngSubmit)="upload()">
+    <h2 class="text-center">Upload Banners </h2>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Select image</label>
+      <input type="file" class="form-control py-2" required
+      (change)="onFileSelected($event)" accept="image/*">
+      @if (bannerform.get('data')?.touched && bannerform.get('data')?.errors?.['required']) {
+        <small class="text-danger">Banner Image is required.</small>
+      }
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Position (Right/Left)</label>
+      <input type="text" placeholder="Enter Position" class="form-control py-2" required formControlName="postion">
+      @if (bannerform.get('postion')?.touched && bannerform.get('postion')?.errors?.['required']) {
+        <small class="text-danger">Position is required.</small>
+      }
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Merchant URL</label>
+      <input type="url" placeholder="https://example.com" class="form-control py-2" required formControlName="MerchantURL">
+      @if (bannerform.get('merchanturl')?.touched && bannerform.get('MerchantURL')?.errors?.['required']) {
+        <small class="text-danger">Merchant URL is required.</small>
+      }
+      @if (bannerform.get('MerchantURL')?.touched && bannerform.get('MerchantURL')?.errors?.['pattern']) {
+        <small class="text-danger">Enter a valid URL starting with http:// or https://</small>
+      }
+    </div>
+
+    <button type="submit" class="btn custom-btn d-block mx-auto" >Upload Banner</button>
+  </form>
+</div>

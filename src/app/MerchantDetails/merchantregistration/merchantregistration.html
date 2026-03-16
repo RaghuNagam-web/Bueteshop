@@ -1,0 +1,166 @@
+<div class="container my-5">
+  <form class="form-container" style="max-width:700px; width:100%;" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h5 class="text-center">Merchant Registration </h5>
+    <div class="d-flex align-items-center justify-content-center mt-3">
+        <div class="border py-1 px-2 pe-3">
+          <a href="https://www.google.com" target="_blank" class="text-decoration-none"> <img src="google-icon.png" alt="google" class="me-3"><span class="fw-medium text-muted google">Sign Up with Google</span> </a>
+        </div>
+    </div>
+    <div class="position-relative my-5 text-center">
+      <hr>
+      <span class="bg-secondary text-white rounded-circle position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center" style="width:40px; height:40px;">
+        OR
+      </span>
+    </div>
+    @if (message()) {
+      <div class="alert alert-danger mb-3">{{ message() }}</div>
+    }
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label">Merchant Name:</label>
+          <input type="text" class="form-control in rounded-0" name="name" placeholder="Merchant Name" required formControlName="merchantName">
+          @if (registerForm.get('merchantName').touched && registerForm.get('merchantName').errors?.['required']) {
+            <small class="text-danger">Merchant Name is required.</small>
+          }
+
+          @if (registerForm.get('merchantName').touched && registerForm.get('merchantName').errors?.['minlength']) {
+            <small class="text-danger">Merchant Name must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label">Brand Name:</label>
+          <input type="text" class="form-control in rounded-0" name="name" placeholder="Enter brand name" formControlName="brandName" required>
+          @if (registerForm.get('brandName').touched && registerForm.get('brandName').errors?.['required']) {
+            <small class="text-danger">Brand Name is required.</small>
+          }
+
+          @if (registerForm.get('brandName').touched && registerForm.get('brandName').errors?.['minlength']) {
+            <small class="text-danger">Brand Name must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label">Industry:</label>
+          <input type="text" class="form-control in rounded-0" name="name" placeholder="Enter Industry" required formControlName="industry">
+          @if (registerForm.get('industry').touched && registerForm.get('industry').errors?.['required']) {
+            <small class="text-danger">Industry is required.</small>
+          }
+
+          @if (registerForm.get('industry').touched && registerForm.get('industry').errors?.['minlength']) {
+            <small class="text-danger">Industry must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="mb-3">
+          <label for="name" class="form-label">Category:</label>
+          <input type="text" class="form-control in rounded-0" name="name" placeholder="Enter Category" required formControlName="category">
+          @if (registerForm.get('category').touched && registerForm.get('category').errors?.['required']) {
+            <small class="text-danger">Category is required.</small>
+          }
+
+          @if (registerForm.get('category').touched && registerForm.get('category').errors?.['minlength']) {
+            <small class="text-danger">Category must be at least 3 characters.</small>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="mb-3">
+          <label for="name" class="form-label">Address:</label>
+          <input type="text" class="form-control in rounded-0" name="name" placeholder="Enter Address" required formControlName="address">
+          @if (registerForm.get('address')?.touched && registerForm.get('address')?.errors?.['required']) {
+                    <small class="text-danger">Please enter address.</small>
+                  }
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="mb-3 ">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control in rounded-0" name="email" placeholder="Enter email" required formControlName="email">
+          @if (registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']) {
+                    <small class="text-danger">Email is required.</small>
+                  }
+                  @if (registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']) {
+                    <small class="text-danger">Please enter a valid email address.</small>
+                  }
+                  @if (registerForm.get('email')?.errors?.['server']) {
+                    <small class="text-danger">{{ registerForm.get('email')?.errors?.['server'] }}</small>
+                  }
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="mb-3 mt-3">
+          <label for="phno" class="form-label">Mobile:</label>
+          <input type="phno" class="form-control in rounded-0" name="phno" placeholder="Enter 10-digit mobile number" required formControlName="mobile">
+          @if (registerForm.get('mobile')?.touched && registerForm.get('mobile')?.errors?.['required']) {
+                    <small class="text-danger">Mobile No is required.</small>
+                  }
+                  @if (registerForm.get('mobile')?.touched && registerForm.get('mobile')?.errors?.['pattern']) {
+                    <small class="text-danger">Enter valid 10-digit number.</small>
+                  }
+                  @if (registerForm.get('mobile')?.errors?.['server']) {
+                    <small class="text-danger">{{ registerForm.get('mobile')?.errors?.['server'] }}</small>
+                  }
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label">MerchantSiteUrl:</label>
+          <input type="text" class="form-control in rounded-0" name="name" placeholder="Enter MerchantSiteUrl" required formControlName="merchatSiteUrl">
+          @if (registerForm.get('merchatSiteUrl').touched && registerForm.get('merchatSiteUrl').errors?.['required']) {
+                <div class="text-danger small">MerchantSiteUrl is required.</div>
+          }
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label">UserName:</label>
+          <input type="text" class="form-control in rounded-0" name="name" placeholder="Enter UserName" required formControlName="userName">
+          @if (registerForm.get('userName').touched && registerForm.get('userName').errors?.['required']) {
+                <div class="text-danger small">Username is required.</div>
+                }
+
+                @if (registerForm.get('userName').touched && registerForm.get('userName').errors?.['minlength']) {
+                <div class="text-danger small">Username must be at least 3 characters.</div>
+                }
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label for="referredBy" class="form-label">Referred By:</label>
+          <input type="text" class="form-control rounded-0" id="referredBy" formControlName="referredBy"  >
+          @if (registerForm.get('referredBy')?.touched && registerForm.get('referredBy')?.errors?.['required']) {
+            <small class="text-danger">Referred By is required.</small>
+          }
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="mb-3">
+          <label for="pwd" class="form-label">Password:</label>
+          <input type="pwd" class="form-control in rounded-0" name="name" placeholder="Password" required formControlName="password">
+          @if (registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']) {
+                    <small class="text-danger">Password is required.</small>
+                  }
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+    <div class="text-center mt-3">
+      <button type="submit" class="btn text rounded-0 text-white" style="width:50%;" [disabled]="registerForm.invalid">
+
+      Submit
+      </button>
+
+    </div>
+  </form>
+</div>
+
+

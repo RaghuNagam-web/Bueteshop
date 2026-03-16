@@ -1,0 +1,9 @@
+<div class="container con d-flex align-items-lg-center justify-content-center">
+  <form class="form-container" [formGroup]="reviewForm" (ngSubmit)="submit()">
+    <h4 class="text-center">Submit Merchant Review</h4>
+    <div class="mb-3 mt-3">
+      <textarea placeholder="write your remarks" rows="2" formControlName= "review" class="form-control py-2" required></textarea>
+    </div>
+    <button type="submit" class="btn custom-btn d-block mx-auto">Submit</button>
+  </form>
+</div>

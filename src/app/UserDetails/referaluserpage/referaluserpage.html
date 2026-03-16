@@ -1,0 +1,55 @@
+<!-- <p>refereluserpage works! User</p> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-center align-items-center con">
+        <div class="card p-4 box" style="width: 500px">
+          <h2 class="text-center mb-4 custom-h2">
+            Refer a Friend via WhatsApp
+          </h2>
+          <form #referalform="ngForm">
+            <div class="mb-3">
+              <input
+                type="tel"
+                class="form-control"
+                placeholder="Enter 10-digit mobile number"
+                [(ngModel)]="mobileNumber"
+                #mobile="ngModel"
+                name="mobile"
+                minlength="10"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                required
+              />
+              <!-- Validation messages -->
+              <div
+                class="text-danger"
+                *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)"
+              >
+                <div *ngIf="mobile.errors?.['required']">
+                  Mobile number is required.
+                </div>
+                <div *ngIf="mobile.errors?.['pattern']">
+                  Enter a valid 10-digit number.
+                </div>
+                <div
+                  *ngIf="mobile.errors?.['minlength'] || mobile.errors?.['maxlength']"
+                >
+                  Mobile number must be 10 digits.
+                </div>
+              </div>
+            </div>
+            <button
+                type="submit"
+                class="btn custom-btn mt-3"
+                (click)="sendreferaltouser()" style="width: 100%;"
+              >
+                Send Referral
+              </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

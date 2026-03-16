@@ -1,0 +1,24 @@
+h2{
+  color: #044e79 !important;
+}
+.form-container {
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.2);
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+}
+.custom-btn{
+  background-color: #00a395  !important;
+  color: white;
+}
+@media (max-width:767px){
+  .form-container{
+    width: 90%;
+  }
+}
+@media (max-width:575px){
+    h2{
+      font-size: 19px;
+    }
+  }

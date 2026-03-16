@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center align-items-center con">
+  <form class="form-container" [formGroup]="sliderform" (ngSubmit)="upload()">
+    <h2 class="text-center">Upload Slider Images</h2>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Choose Slider Image</label>
+      <input type="file" class="form-control py-2" id="fileInput"
+        (change)="onFileSelected($event)" accept="image/*"
+        required >
+      @if (sliderform.get('Image')?.touched && sliderform.get('Image')?.errors?.['required']) {
+        <small class="text-danger">Slider Image is required.</small>
+      }
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Merchant URL</label>
+      <input type="url" placeholder="https://example.com" class="form-control py-2" required formControlName="MerchantURL">
+      @if (sliderform.get('MerchantURL')?.touched && sliderform.get('MerchantURL')?.errors?.['required']) {
+        <small class="text-danger">Merchant URL is required.</small>
+      }
+      @if (sliderform.get('MerchantURL')?.touched && sliderform.get('MerchantURL')?.errors?.['pattern']) {
+        <small class="text-danger">Enter a valid URL starting with http:// or https://</small>
+      }
+    </div>
+    <button type="submit" class="btn custom-btn d-block mx-auto" >Upload Slider</button>   <!--[disabled]="sliderform.invalid"-->
+
+    <!-- <hr class="my-4">
+
+    <h2 class="text-center">Payment</h2> -->
+  </form>
+</div>

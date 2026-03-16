@@ -1,0 +1,45 @@
+ <div class="d-flex justify-content-center align-items-center con" >
+  <form class="form-container" [formGroup]="seasonaloffersform" (ngSubmit)="upload()">
+    <h2 class="text-center">Upload seasonaloffers</h2>
+    <!-- <div class="mb-3 mt-3">
+      <label class="form-label">ID</label>
+      <input type="number" placeholder="Enter id" class="form-control py-2" required formControlName="id">
+      @if (seasonaloffersform.get('id')?.touched && seasonaloffersform.get('id')?.errors?.['required']) {
+        <small class="text-danger">Id is required.</small>
+      }
+    </div> -->
+    <!-- <div class="mb-3 mt-3">
+      <label class="form-label">Select image</label>
+      <input type="file" class="form-control py-2" required formControlName="Data">
+      @if (seasonaloffersform.get('Data')?.touched && seasonaloffersform.get('Data')?.errors?.['required']) {
+        <small class="text-danger">seasonaloffers Image is required.</small>
+      }
+    </div> -->
+    <div class="mb-3 mt-3">
+      <label class="form-label">Select image</label>
+      <input
+        type="file"
+        class="form-control py-2"
+        required
+        (change)="onFileSelected($event)"
+        accept="image/*" id="fileInput"
+      >
+      <!-- Validation message -->
+      @if (seasonaloffersform.get('Data')?.touched && seasonaloffersform.get('Data')?.errors?.['required']) {
+        <small class="text-danger">seasonaloffers Image is required.</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Merchant URL</label>
+      <input type="url" placeholder="https://example.com" class="form-control py-2" required formControlName="MerchantURL">
+      @if (seasonaloffersform.get('MerchantURL')?.touched && seasonaloffersform.get('MerchantURL')?.errors?.['required']) {
+        <small class="text-danger">Merchant URL is required.</small>
+      }
+      @if (seasonaloffersform.get('MerchantURL')?.touched && seasonaloffersform.get('merchantURL')?.errors?.['pattern']) {
+        <small class="text-danger">Enter a valid URL starting with http:// or https://</small>
+      }
+    </div>
+    <button type="submit" class="btn custom-btn d-block mx-auto" [disabled]="seasonaloffersform.invalid">Upload seasonaloffers</button>
+  </form>
+</div>

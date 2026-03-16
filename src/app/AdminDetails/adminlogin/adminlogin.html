@@ -1,0 +1,20 @@
+<div class="container d-flex align-items-center justify-content-center con">
+  <form class="form-container" [formGroup]="loginForm" (ngSubmit)="login()" >
+    <h2 class="text-center">Admin Login</h2>
+    <div class="mb-3 mt-3">
+      <label class="form-label">username</label>
+      <input type="email" placeholder="Enter username" class="form-control py-2" required formControlName="username">
+      @if (loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']) {
+        <small class="text-danger">Email is required.</small>
+      }
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" placeholder="Enter password" class="form-control py-2" required formControlName="password">
+      @if (loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']) {
+        <small class="text-danger">Password is required.</small>
+      }
+    </div>
+    <button type="submit" class="btn custom-btn d-block mx-auto" [disabled]="loginForm.invalid">Login</button>
+  </form>
+</div>

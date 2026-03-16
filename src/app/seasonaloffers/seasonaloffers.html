@@ -1,0 +1,62 @@
+<div  class="container rounded width mb-4 mb-sm-5">
+  <div class="con py-3 d-flex justify-content-between align-items-center">
+  <h5>Seasonal Offers</h5>
+
+  <!-- See More -->
+  <a href="javascript:void(0)" (click)="showAllImages()" *ngIf="!showAll()">See more</a>
+
+  <!-- Show Less -->
+  <a href="javascript:void(0)" (click)="hideAllImages()" *ngIf="showAll()">Show less</a>
+  </div>
+
+  <div *ngIf="isloading()" class="text-center py-5">
+    <div class="spinner-border "></div>
+  </div>
+
+  <!--  SHOW ALL IMAGES GRID -->
+  <div *ngIf="showAll()" class="container rounded width mb-5">
+    <div class="row">
+      <div *ngFor="let img of images()" class="col-12 col-sm-6 col-md-4 col-lg-3 px-1 py-3">
+        <a [href]="img.url" target="_blank">
+          <img [src]="img.src" class="img-fluid w-100 rounded shadow-sm" alt="offer">
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- CAROUSEL (hide when showAll = true) -->
+  <div *ngIf="!showAll() && !isloading()" id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+    <div class="carousel-inner slow-slide">
+      <div *ngFor="let group of groupedImages(); let i = index" class="carousel-item" [class.active]="i === 0">
+        <div class="row">
+          <div *ngFor="let img of group" class="col-12 col-sm-6 col-md-4 col-lg-3 px-1 py-3">
+            <a [href]="img.url" target="_blank">
+              <img [src]="img.src" alt="offer" class="img-fluid w-100 rounded shadow-sm" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span><i class="bi bi-chevron-left prev border"></i></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span><i class="bi bi-chevron-right next border"></i></span>
+    </button>
+
+    </div>
+</div>
+
+
+<!-- <div *ngIf="isloading()" class="text-center py-5">
+  <div class="spinner-border "></div>
+</div> -->
+
+
+
+

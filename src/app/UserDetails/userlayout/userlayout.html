@@ -1,0 +1,162 @@
+<div class="container-fluid  con p-0 position-relative">
+  <div class="container container1 p-0">
+    <img src="./bs-topstrip-new.png" class="img-fluid w-100">
+    <img src="./flower.png" alt="flower" class="d-block img-fluid flower">
+  </div>
+</div>
+<div class="container-fluid con1 mb-4 mb-xl-5">
+  <div class="container">
+    <ul class="breadcrumb py-2 py-lg-3 mb-0">
+      <li class="breadcrumb-item"><a class="text-decoration-none fs-5" routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active fw-semibold fs-5">{{currentpage}}</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="container position-relative mb-4 mb-xl-5">
+    <div class="d-flex align-items-center justify-content-between my-gradient px-3 py-1">
+      <nav class="navbar navbar-expand-lg">
+        <div class="d-none d-lg-flex align-items-center">
+          <i class="bi bi-person user-icon me-3"></i>
+          <h2 class="text-white mt-2 ">User Dashboard</h2>
+        </div>
+          <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      </nav>
+       <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bell text-white fs-5" ></i>
+        <p class="text-white fs-3 mb-0">{{name}}</p>
+        <img src="./img-1.png" alt="merchant" class="icon">
+        <i class="bi bi-chevron-down text-white fw-medium"></i>
+      </div>
+    </div>
+
+    <div class="row g-0">
+      <div class="col-4 d-none d-lg-flex flex-column link">
+        <ul class="navbar-nav flex-grow-1">
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="/">
+              <i class="bi bi-house-door me-2 text-white"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link px-2 fs-5 cur" routerLink="useradmin" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}">
+              <i class="bi bi-person-gear me-2 text-white"></i>
+              Account Information
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="referaluserpage" routerLinkActive="active1">
+              <i class="bi bi-people me-2 text-white"></i>
+              Referal user page
+            </a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="review" routerLinkActive="active1">
+                  <i class="bi bi-chat-dots me-2 text-white"></i>
+                  Reviews
+                </a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="myearnings" routerLinkActive="active1">
+              <i class="bi bi-currency-dollar me-2 text-white"></i>
+              My Earnings
+            </a>
+          </li>
+        </ul>
+        <!-- <ul class="navbar-nav">
+        <hr>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="/help">
+              <i class="bi bi-question-circle me-2 text-white"></i>
+              Help
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" routerLink="/settings">
+              <i class="bi bi-gear me-2 text-white"></i>
+              Settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-2 fs-5 cur" (click)="logout()">
+              <i class="bi bi-box-arrow-right me-2 text-white"></i>
+              Sign Out
+            </a>
+          </li>
+        </ul> -->
+      </div>
+      <div class="col-12 col-lg-8 link1 d-flex flex-column flex-grow-1 justify-content-center py-5">
+        <router-outlet />
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="offcanvas offcanvas-start d-lg-none custom-offcanvas" id="offcanvasMenu" data-bs-scroll="true" data-bs-backdrop="false">
+          <div class="offcanvas-header color">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-person user-icon me-2 me-sm-3"></i>
+              <h2 class="mt-2 text-white">User Dashboard</h2>
+              <button type="button" class="btn-close btn-close-white fs-6 fs-md-5" data-bs-dismiss="offcanvas"></button>
+            </div>
+          </div>
+          <div class="offcanvas-body body d-flex flex-column">
+            <ul class="navbar-nav flex-grow-1">
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="/">
+                  <i class="bi bi-house-door me-2 text-white"></i>
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="useradmin" routerLinkActive="active1" [routerLinkActiveOptions]="{exact: true}">
+                  <i class="bi bi-person-gear me-2 text-white"></i>
+                  Account Information
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="referaluserpage" routerLinkActive="active1">
+                  <i class="bi bi-people me-2 text-white"></i>
+                  Referal user page
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="review" routerLinkActive="active1">
+                  <i class="bi bi-chat-dots me-2 text-white"></i>
+                  Reviews
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="myearnings" routerLinkActive="active1">
+                  <i class="bi bi-currency-dollar me-2 text-white"></i>
+                  My Earnings
+                </a>
+              </li>
+            </ul>
+            <!-- <ul class="navbar-nav">
+              <hr>
+                <li class="nav-item">
+                  <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="/help">
+                    <i class="bi bi-question-circle me-2 text-white"></i>
+                    Help
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-2 fs-5 cur" data-bs-dismiss="offcanvas" routerLink="/settings">
+                    <i class="bi bi-gear me-2 text-white"></i>
+                    Settings
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-2 fs-5 cur" (click)="logout()">
+                    <i class="bi bi-box-arrow-right me-2 text-white"></i>
+                    Sign Out
+                  </a>
+                </li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

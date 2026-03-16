@@ -1,0 +1,29 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h5{
+  color: #004267;
+}
+.register{
+  color: #004267;
+}
+.form-container {
+    background-color: #ebebeb;
+    padding: 30px;
+    border-radius: 15px;
+}
+.text{
+  background-color: #004267;
+}
+.form-check-input {
+  width: 20px;
+  height: 20px;
+}
+@media (max-width:767px){
+  .google{
+    font-size: 15px;
+  }
+}
+

@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center align-items-center con">
+    <div class="col-12 col-sm-7 col-lg-6">
+        <div class="card box">
+
+            <h5 class="ps-3 pt-3 mb-0">Account Information</h5>
+
+            <div class="card-body">
+              <table class="table table-bordered" *ngIf="merchantdata()">
+                <tbody>
+                  <tr>
+                    <th><i class="bi bi-person me-2"></i>Name</th>
+                    <td>{{merchantdata().userName}}</td>
+                  </tr>
+                  <tr>
+                    <th><i class="bi bi-envelope me-2"></i>Email</th>
+                    <td>{{merchantdata().email}}</td>
+                  </tr>
+                  <tr>
+                    <th><i class="bi bi-telephone me-2"></i>Mobile</th>
+                    <td>{{merchantdata().mobile}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>

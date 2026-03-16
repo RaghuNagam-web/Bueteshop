@@ -1,0 +1,21 @@
+<form>
+  <h5 class="text-center mb-3">Bueteshop Reviews</h5>
+  <input type="search" class="form-control w-75 mx-auto" placeholder="Search for reviews...." (input)="search($event)">
+</form>
+
+<div *ngIf="message()">
+  <p class="mt-3 d-flex justify-content-center">No reviews found</p>
+</div>
+<div *ngIf="!message()">
+  <div class="flow">
+    <div *ngFor="let r of review()" class="mt-3">
+      <div class="r">
+        <div class="d-flex align-items-center justify-content-between">
+          <div>{{r.merchantName}}</div>
+          <div>{{r.averageRating}} <i class="bi bi-star-fill text-warning"></i></div>
+        </div>
+        <div class="text-end">{{r.totalReviews}} Reviews</div>
+      </div>
+    </div>
+  </div>
+</div>
